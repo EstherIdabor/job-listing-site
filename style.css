@@ -1,0 +1,226 @@
+:root {
+  --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+  --Light-Grayish-Cyan-filter-tablet: hsl(180, 31%, 95%);
+  --Light-Grayish-Cyan: hsl(180, 52%, 96%);
+
+  --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+  --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
+/* GENERAL STYLING */
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+  background-color: var(--Light-Grayish-Cyan);
+}
+header {
+  background-image: url("./images/bg-header-desktop.svg");
+  height: 156px;
+  background-color: var(--Desaturated-Dark-Cyan);
+}
+main {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* STYLES FOR THE FILTER BAR */
+.filter-bar {
+  display: none;
+  padding: 2rem;
+  margin-top: -5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 5px 3px 15px -8px var(--Desaturated-Dark-Cyan);
+}
+.filter-bar-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  align-items: center;
+}
+
+.filter-key-items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.filter-key-item {
+  display: flex;
+}
+.filter-bar-item a {
+  color: var(--Desaturated-Dark-Cyan);
+}
+.remove-icon {
+  background-color: var(--Desaturated-Dark-Cyan);
+  width: 30px;
+  height: 30px;
+  padding: 0.7rem;
+  aspect-ratio: 1/1;
+  border: none;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  cursor: pointer;
+}
+.remove-icon:focus,
+.remove-icon:hover {
+  background-color: var(--Very-Dark-Grayish-Cyan);
+}
+
+/* STYLES FOR THE LIST OF JOBS AVAILABLE */
+.job-item {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  /* border-left: 4px solid var(--Desaturated-Dark-Cyan); */
+  padding: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 3px 15px -8px var(--Desaturated-Dark-Cyan);
+}
+.job-item:has(.featured) {
+  border-left: 4px solid var(--Desaturated-Dark-Cyan);
+}
+.job-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.job-title {
+  color: var(--Very-Dark-Grayish-Cyan);
+  font-weight: 700;
+}
+.job-title:hover {
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.language {
+  color: var(--Desaturated-Dark-Cyan);
+  font-weight: 900;
+
+  border: none;
+  background-color: var(--Light-Grayish-Cyan-filter-tablet);
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.languages .language:hover,
+.languages .language:focus {
+  background-color: var(--Desaturated-Dark-Cyan);
+  color: #fff;
+}
+.company-name {
+  color: var(--Desaturated-Dark-Cyan);
+}
+.company-image {
+  width: 100px;
+  aspect-ratio: 1/1;
+}
+
+.new {
+  color: #fff;
+  background-color: var(--Desaturated-Dark-Cyan);
+  padding: 0.4rem 0.6rem;
+  border-radius: 3rem;
+}
+.featured {
+  color: #fff;
+  background-color: var(--Very-Dark-Grayish-Cyan);
+  padding: 0.4rem 0.8rem;
+  border-radius: 3rem;
+}
+.role-info > * {
+  padding: 0.7rem;
+}
+.role-info ul {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-between;
+  color: var(--Very-Dark-Grayish-Cyan);
+  opacity: 0.7;
+}
+
+.first-list-item {
+  list-style: none;
+}
+.languages {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 750px) {
+  .job {
+    margin-top: 10rem;
+  }
+  .filter-bar {
+    top: -19rem;
+  }
+  .job-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8rem;
+  }
+  .job-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .company-image {
+    margin-top: -7rem;
+  }
+  .role-info h1 span {
+    margin-right: 1rem;
+  }
+  .languages {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+  .filter-bar-item a {
+    font-size: 1.5rem;
+  }
+  .languages::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--Dark-Grayish-Cyan);
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    background-image: url("./images/bg-header-mobile.svg");
+  }
+  .company-image {
+    width: 60px;
+    margin-top: -5rem;
+  }
+  .filter-bar-item a {
+    font-size: 2rem;
+  }
+}
