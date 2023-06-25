@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/EstherIdabor/job-listing-site)
-- Live Site URL: [Add live site URL here](https://job-listing-site-liart.vercel.app/)
+- Solution URL: [solution URL here](https://github.com/EstherIdabor/job-listing-site)
+- Live Site URL: [live site URL here](https://job-listing-site-liart.vercel.app/)
 
 ### Built with
 
